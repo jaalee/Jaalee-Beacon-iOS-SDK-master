@@ -14,7 +14,7 @@ We are happy to share with you our latest Beacon SDK for iOS.
 
 You can email us with any question or problem you are having, and we will try hard to reply asap. Email: dev@jaalee.com
 
-If you need stickers in larger quantities, please contact our sales dept: sales@jaalee.com
+If you need beacons in larger quantities, please contact our sales dept: sales@jaalee.com
 
 Our Team：[JAALEE](http://www.jaalee.com/)
 
