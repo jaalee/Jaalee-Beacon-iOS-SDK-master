@@ -15,3 +15,6 @@ Features:
   - All the Jaalee Beacon are supported.
   - bug fix.
   
+## 2.1 (August 25, 2014)
+Features:
+  - Fixes the bug that beacon name and broadcasting interval can not be read
