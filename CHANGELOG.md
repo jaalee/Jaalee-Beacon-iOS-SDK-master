@@ -2,7 +2,7 @@ Jaalee Beacon makes life more simple and cheerful! If you are interested in our 
 For the latest information, please visit http://www.jaalee.com/
 
 International Sales: sales@jaalee.com
-Technology Support: service@jaalee.com
+Technology Support: dev@jaalee.com
 
 ## 1.0 (April 25, 2014)
 Features:
