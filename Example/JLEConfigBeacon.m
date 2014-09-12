@@ -9,6 +9,7 @@
 #import "JLEConfigBeacon.h"
 #import "JLEBeaconDevice.h"
 #import "JLEReadBeaconParameters.h"
+#import "JLEWaitProgressShow.h"
 
 @interface JLEConfigBeacon ()
 
@@ -109,12 +110,20 @@
     UILabel *name = (UILabel*)[cell viewWithTag:1];
     UILabel *BeaconID = (UILabel*)[cell viewWithTag:2];
     UILabel *rssi = (UILabel*)[cell viewWithTag:3];
+    UILabel *connectable = (UILabel*)[cell viewWithTag:4];
     
     JLEBeaconDevice *temp = [_mBeaconDeviceList objectAtIndex:indexPath.row];
     
     name.text = temp.name;
     BeaconID.text = [temp.peripheral.identifier UUIDString];
     rssi.text = [NSString stringWithFormat:@"%d", temp.rssi];
+    if (temp.isConnectable) {
+        [connectable setText:@"true"];
+    }
+    else
+    {
+        [connectable setText:@"false"];
+    }
     
     
     return cell;
@@ -126,7 +135,13 @@
     [tableView  deselectRowAtIndexPath:indexPath animated:YES];
     _mBeaconDevice = [_mBeaconDeviceList objectAtIndex:indexPath.row];
     
-    [self performSegueWithIdentifier:@"ConfigDetail" sender:nil];
+    if (_mBeaconDevice.isConnectable) {
+        [self performSegueWithIdentifier:@"ConfigDetail" sender:nil];
+    }
+    else
+    {
+        [JLEWaitProgressShow showErrorWithStatus:@"Current device is in Non-Connectable mode"];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

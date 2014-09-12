@@ -21,7 +21,7 @@
 		C40404A519060F6300B264BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C404048719060F6300B264BA /* UIKit.framework */; };
 		C40404AD19060F6300B264BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C40404AB19060F6300B264BA /* InfoPlist.strings */; };
 		C40404AF19060F6300B264BA /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C40404AE19060F6300B264BA /* ExampleTests.m */; };
-		C4715D9E19AAEACE006D4D13 /* libJaaleeBeaconSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4715D9D19AAEACE006D4D13 /* libJaaleeBeaconSDK.a */; };
+		C439207F19B9620D00CEDE15 /* libJaaleeBeaconSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C439207E19B9620D00CEDE15 /* libJaaleeBeaconSDK.a */; };
 		C4D9B9C51908E467009983B6 /* far_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D9B9C11908E467009983B6 /* far_image.png */; };
 		C4D9B9C61908E467009983B6 /* immediate_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D9B9C21908E467009983B6 /* immediate_image.png */; };
 		C4D9B9C71908E467009983B6 /* near_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D9B9C31908E467009983B6 /* near_image.png */; };
@@ -66,13 +66,13 @@
 		C40404AC19060F6300B264BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C40404AE19060F6300B264BA /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
 		C40404B819060F8900B264BA /* libJaaleeBeaconSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libJaaleeBeaconSDK.a; path = "../JaaleeBeaconSDK/build/Debug-iphoneos/libJaaleeBeaconSDK.a"; sourceTree = "<group>"; };
-		C4715D9719AAEAC2006D4D13 /* JLEBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeacon.h; path = ../SDK/JLEBeacon.h; sourceTree = "<group>"; };
-		C4715D9819AAEACE006D4D13 /* JLEBeaconConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconConfigManager.h; path = ../SDK/JLEBeaconConfigManager.h; sourceTree = "<group>"; };
-		C4715D9919AAEACE006D4D13 /* JLEBeaconDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconDefinitions.h; path = ../SDK/JLEBeaconDefinitions.h; sourceTree = "<group>"; };
-		C4715D9A19AAEACE006D4D13 /* JLEBeaconDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconDevice.h; path = ../SDK/JLEBeaconDevice.h; sourceTree = "<group>"; };
-		C4715D9B19AAEACE006D4D13 /* JLEBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconManager.h; path = ../SDK/JLEBeaconManager.h; sourceTree = "<group>"; };
-		C4715D9C19AAEACE006D4D13 /* JLEBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconRegion.h; path = ../SDK/JLEBeaconRegion.h; sourceTree = "<group>"; };
-		C4715D9D19AAEACE006D4D13 /* libJaaleeBeaconSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libJaaleeBeaconSDK.a; path = ../SDK/libJaaleeBeaconSDK.a; sourceTree = "<group>"; };
+		C439207819B9620C00CEDE15 /* JLEBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeacon.h; path = ../SDK/JLEBeacon.h; sourceTree = "<group>"; };
+		C439207919B9620C00CEDE15 /* JLEBeaconConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconConfigManager.h; path = ../SDK/JLEBeaconConfigManager.h; sourceTree = "<group>"; };
+		C439207A19B9620C00CEDE15 /* JLEBeaconDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconDefinitions.h; path = ../SDK/JLEBeaconDefinitions.h; sourceTree = "<group>"; };
+		C439207B19B9620D00CEDE15 /* JLEBeaconDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconDevice.h; path = ../SDK/JLEBeaconDevice.h; sourceTree = "<group>"; };
+		C439207C19B9620D00CEDE15 /* JLEBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconManager.h; path = ../SDK/JLEBeaconManager.h; sourceTree = "<group>"; };
+		C439207D19B9620D00CEDE15 /* JLEBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconRegion.h; path = ../SDK/JLEBeaconRegion.h; sourceTree = "<group>"; };
+		C439207E19B9620D00CEDE15 /* libJaaleeBeaconSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libJaaleeBeaconSDK.a; path = ../SDK/libJaaleeBeaconSDK.a; sourceTree = "<group>"; };
 		C4D9B9C11908E467009983B6 /* far_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = far_image.png; path = Res/far_image.png; sourceTree = "<group>"; };
 		C4D9B9C21908E467009983B6 /* immediate_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = immediate_image.png; path = Res/immediate_image.png; sourceTree = "<group>"; };
 		C4D9B9C31908E467009983B6 /* near_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = near_image.png; path = Res/near_image.png; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 			files = (
 				C404048619060F6300B264BA /* CoreGraphics.framework in Frameworks */,
 				C404048819060F6300B264BA /* UIKit.framework in Frameworks */,
-				C4715D9E19AAEACE006D4D13 /* libJaaleeBeaconSDK.a in Frameworks */,
+				C439207F19B9620D00CEDE15 /* libJaaleeBeaconSDK.a in Frameworks */,
 				C404048419060F6300B264BA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,13 +197,13 @@
 		C4A8E51D190A16C7008BD314 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				C4715D9819AAEACE006D4D13 /* JLEBeaconConfigManager.h */,
-				C4715D9919AAEACE006D4D13 /* JLEBeaconDefinitions.h */,
-				C4715D9A19AAEACE006D4D13 /* JLEBeaconDevice.h */,
-				C4715D9B19AAEACE006D4D13 /* JLEBeaconManager.h */,
-				C4715D9C19AAEACE006D4D13 /* JLEBeaconRegion.h */,
-				C4715D9D19AAEACE006D4D13 /* libJaaleeBeaconSDK.a */,
-				C4715D9719AAEAC2006D4D13 /* JLEBeacon.h */,
+				C439207819B9620C00CEDE15 /* JLEBeacon.h */,
+				C439207919B9620C00CEDE15 /* JLEBeaconConfigManager.h */,
+				C439207A19B9620C00CEDE15 /* JLEBeaconDefinitions.h */,
+				C439207B19B9620D00CEDE15 /* JLEBeaconDevice.h */,
+				C439207C19B9620D00CEDE15 /* JLEBeaconManager.h */,
+				C439207D19B9620D00CEDE15 /* JLEBeaconRegion.h */,
+				C439207E19B9620D00CEDE15 /* libJaaleeBeaconSDK.a */,
 			);
 			name = SDK;
 			sourceTree = "<group>";
@@ -497,6 +497,14 @@
 					SDK,
 					"2.0/Jaalee-iOS-SDK-master",
 					v2.0/SDK,
+					/Users/jaalee/Desktop/Beacon,
+					SDK,
+					"2.0/Jaalee-Beacon-iOS-SDK-master",
+					v2.1/SDK,
+					/Users/jaalee/Desktop/Beacon,
+					SDK,
+					"2.0/Jaalee-Beacon-iOS-SDK-master",
+					v2.1/SDK,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -530,6 +538,14 @@
 					SDK,
 					"2.0/Jaalee-iOS-SDK-master",
 					v2.0/SDK,
+					/Users/jaalee/Desktop/Beacon,
+					SDK,
+					"2.0/Jaalee-Beacon-iOS-SDK-master",
+					v2.1/SDK,
+					/Users/jaalee/Desktop/Beacon,
+					SDK,
+					"2.0/Jaalee-Beacon-iOS-SDK-master",
+					v2.1/SDK,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

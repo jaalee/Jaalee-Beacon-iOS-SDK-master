@@ -107,6 +107,14 @@
 @property (nonatomic)           NSInteger               rssi;
 
 /**
+ *  isConnectable
+ *
+ *    Whether the beacon can be connected
+ *
+ */
+@property (nonatomic)           BOOL               isConnectable;
+
+/**
  *  isConnected
  *
  *    Flag indicating connection status.
