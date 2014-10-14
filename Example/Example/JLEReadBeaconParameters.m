@@ -57,7 +57,7 @@
 {
     [JLEWaitProgressShow showSuccessWithStatus:@"Connected successfully"];
     
-    [self ReadParaFromBeacon];
+    [self ConfigBeacon];
 }
 
 - (void)beaconConnectionDidFail:(JLEBeaconDevice *)beacon withError:(NSError *)error
@@ -205,7 +205,7 @@
 - (void) WriteTxPowerValue
 {
     if (self.mSelectBeaconDevice.isConnected) {
-        [self.mSelectBeaconDevice writeBeaconTxPower:JLEBeaconPowerLevel3 withCompletion:^(BOOL value, NSError* error){
+        [self.mSelectBeaconDevice writeBeaconTxPower:JLEBeaconPowerLevel1 withCompletion:^(BOOL value, NSError* error){
             
             if (value) {
                 NSLog(@"Beacon Tx Power Config Success..");
@@ -231,13 +231,7 @@
 - (void) WriteBroadcastRate
 {
     if (self.mSelectBeaconDevice.isConnected) {
-        [self.mSelectBeaconDevice writeBeaconAdvInterval:100 withCompletion:^(BOOL value, NSError* error){
-            
-            if (value) {
-                NSLog(@"Beacon Broadcast Rate Config Success..");
-            }
-            
-        }];
+        [self.mSelectBeaconDevice callJaaleeBeacon];
     }
 }
 

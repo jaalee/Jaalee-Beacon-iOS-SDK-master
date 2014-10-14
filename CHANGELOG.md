@@ -1,8 +1,5 @@
 Jaalee Beacon makes life more simple and cheerful! If you are interested in our product, please contact us in following ways. We will provide the best service wholeheartedly for you!
-For the latest information, please visit http://www.jaalee.com/
-
-International Sales: sales@jaalee.com
-Technology Support: dev@jaalee.com
+For the latest information, please visit http://www.jaalee.com/International Sales: sales@ankhmaway.com.cnTechnology Support: service@jaalee.com
 
 ## 1.0 (April 25, 2014)
 Features:
@@ -26,3 +23,12 @@ Features:
 Features:
   - Improve performance
   - Connect mode can be get
+
+## 2.3 (October 13, 2014)
+Features:
+  - Support iOS 8.
+  - Bug Fixes.
+
+## 2.4 (October 14, 2014)
+Features:
+  - Bug Fixes.
