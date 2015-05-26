@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "JLEBeaconDevice.h"
-#import "JLEBeaconConfigManager.h"
+#import "JAALEEBeaconSDK.h"
 
 @interface JLEReadBeaconParameters : ViewController
 @property (weak, nonatomic) IBOutlet UILabel *mUUID;
@@ -18,9 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *mBattLevel;
 @property (weak, nonatomic) IBOutlet UILabel *mDeviceName;
 @property (weak, nonatomic) IBOutlet UILabel *mMeasuredPowerValue;
-
 @property (weak, nonatomic) IBOutlet UILabel *TxPowerLevel;
-
 @property (nonatomic, strong) JLEBeaconDevice          *mSelectBeaconDevice;
-
 @end

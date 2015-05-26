@@ -21,13 +21,31 @@
 		C40404A519060F6300B264BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C404048719060F6300B264BA /* UIKit.framework */; };
 		C40404AD19060F6300B264BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C40404AB19060F6300B264BA /* InfoPlist.strings */; };
 		C40404AF19060F6300B264BA /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C40404AE19060F6300B264BA /* ExampleTests.m */; };
-		C4195DA719ECCDD80088451E /* libJaaleeBeaconSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4195DA619ECCDD80088451E /* libJaaleeBeaconSDK.a */; };
+		C40404B919060F8900B264BA /* libJaaleeBeaconSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C40404B819060F8900B264BA /* libJaaleeBeaconSDK.a */; };
+		C47E6CC41B0AF16A004B0B09 /* JLEURIBeaconDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E6CC31B0AF16A004B0B09 /* JLEURIBeaconDemo.m */; };
+		C497E32C1B141F4C005A3140 /* AccViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E31D1B141F4C005A3140 /* AccViewController.m */; };
+		C497E32D1B141F4C005A3140 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E31F1B141F4C005A3140 /* BaseViewController.m */; };
+		C497E32E1B141F4C005A3140 /* BeaconStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E3211B141F4C005A3140 /* BeaconStateViewController.m */; };
+		C497E32F1B141F4C005A3140 /* iBeaconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E3231B141F4C005A3140 /* iBeaconViewController.m */; };
+		C497E3301B141F4C005A3140 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E3251B141F4C005A3140 /* MainViewController.m */; };
+		C497E3311B141F4C005A3140 /* MotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E3271B141F4C005A3140 /* MotionViewController.m */; };
+		C497E3321B141F4C005A3140 /* PositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E3291B141F4C005A3140 /* PositionViewController.m */; };
+		C497E3331B141F4C005A3140 /* URIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E32B1B141F4C005A3140 /* URIViewController.m */; };
+		C497E33F1B141F78005A3140 /* libJaaleeBeaconSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C497E33E1B141F78005A3140 /* libJaaleeBeaconSDK.a */; };
+		C49E58501B0EDD5A002B8718 /* position_a.png in Resources */ = {isa = PBXBuildFile; fileRef = C49E584F1B0EDD5A002B8718 /* position_a.png */; };
+		C49E58571B0EDD63002B8718 /* motion.png in Resources */ = {isa = PBXBuildFile; fileRef = C49E58511B0EDD63002B8718 /* motion.png */; };
+		C49E58581B0EDD63002B8718 /* position_b.png in Resources */ = {isa = PBXBuildFile; fileRef = C49E58521B0EDD63002B8718 /* position_b.png */; };
+		C49E58591B0EDD63002B8718 /* position_c.png in Resources */ = {isa = PBXBuildFile; fileRef = C49E58531B0EDD63002B8718 /* position_c.png */; };
+		C49E585A1B0EDD63002B8718 /* position_d.png in Resources */ = {isa = PBXBuildFile; fileRef = C49E58541B0EDD63002B8718 /* position_d.png */; };
+		C49E585B1B0EDD63002B8718 /* position_e.png in Resources */ = {isa = PBXBuildFile; fileRef = C49E58551B0EDD63002B8718 /* position_e.png */; };
+		C49E585C1B0EDD63002B8718 /* position_f.png in Resources */ = {isa = PBXBuildFile; fileRef = C49E58561B0EDD63002B8718 /* position_f.png */; };
+		C49E58741B0EFD3C002B8718 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C49E58731B0EFD3C002B8718 /* AudioToolbox.framework */; };
 		C4D9B9C51908E467009983B6 /* far_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D9B9C11908E467009983B6 /* far_image.png */; };
 		C4D9B9C61908E467009983B6 /* immediate_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D9B9C21908E467009983B6 /* immediate_image.png */; };
 		C4D9B9C71908E467009983B6 /* near_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D9B9C31908E467009983B6 /* near_image.png */; };
 		C4D9B9C81908E467009983B6 /* unknown_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D9B9C41908E467009983B6 /* unknown_image.png */; };
 		C4D9B9DE1909558C009983B6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C4D9B9DB1909558C009983B6 /* SVProgressHUD.bundle */; };
-		C4D9B9DF1909558C009983B6 /* JLEWaitProgressShow.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D9B9DD1909558C009983B6 /* JLEWaitProgressShow.m */; };
+		C4D9B9DF1909558C009983B6 /* WaitProgressShow.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D9B9DD1909558C009983B6 /* WaitProgressShow.m */; };
 		C4E42C911907C88C00A8152C /* JLEReadBeaconParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E42C901907C88C00A8152C /* JLEReadBeaconParameters.m */; };
 		C4E42C951907C8E800A8152C /* JLEConfigBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E42C941907C8E800A8152C /* JLEConfigBeacon.m */; };
 		C4E42C981907C90200A8152C /* JLEDistancesDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E42C971907C90200A8152C /* JLEDistancesDemo.m */; };
@@ -66,20 +84,49 @@
 		C40404AC19060F6300B264BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C40404AE19060F6300B264BA /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
 		C40404B819060F8900B264BA /* libJaaleeBeaconSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libJaaleeBeaconSDK.a; path = "../JaaleeBeaconSDK/build/Debug-iphoneos/libJaaleeBeaconSDK.a"; sourceTree = "<group>"; };
-		C4195DA019ECCDD80088451E /* JLEBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeacon.h; path = ../SDK/JLEBeacon.h; sourceTree = "<group>"; };
-		C4195DA119ECCDD80088451E /* JLEBeaconConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconConfigManager.h; path = ../SDK/JLEBeaconConfigManager.h; sourceTree = "<group>"; };
-		C4195DA219ECCDD80088451E /* JLEBeaconDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconDefinitions.h; path = ../SDK/JLEBeaconDefinitions.h; sourceTree = "<group>"; };
-		C4195DA319ECCDD80088451E /* JLEBeaconDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconDevice.h; path = ../SDK/JLEBeaconDevice.h; sourceTree = "<group>"; };
-		C4195DA419ECCDD80088451E /* JLEBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconManager.h; path = ../SDK/JLEBeaconManager.h; sourceTree = "<group>"; };
-		C4195DA519ECCDD80088451E /* JLEBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconRegion.h; path = ../SDK/JLEBeaconRegion.h; sourceTree = "<group>"; };
-		C4195DA619ECCDD80088451E /* libJaaleeBeaconSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libJaaleeBeaconSDK.a; path = ../SDK/libJaaleeBeaconSDK.a; sourceTree = "<group>"; };
+		C47E6CC21B0AF16A004B0B09 /* JLEURIBeaconDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLEURIBeaconDemo.h; sourceTree = "<group>"; };
+		C47E6CC31B0AF16A004B0B09 /* JLEURIBeaconDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLEURIBeaconDemo.m; sourceTree = "<group>"; };
+		C497E31C1B141F4C005A3140 /* AccViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccViewController.h; path = Connection/AccViewController.h; sourceTree = "<group>"; };
+		C497E31D1B141F4C005A3140 /* AccViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccViewController.m; path = Connection/AccViewController.m; sourceTree = "<group>"; };
+		C497E31E1B141F4C005A3140 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = Connection/BaseViewController.h; sourceTree = "<group>"; };
+		C497E31F1B141F4C005A3140 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = Connection/BaseViewController.m; sourceTree = "<group>"; };
+		C497E3201B141F4C005A3140 /* BeaconStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeaconStateViewController.h; path = Connection/BeaconStateViewController.h; sourceTree = "<group>"; };
+		C497E3211B141F4C005A3140 /* BeaconStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeaconStateViewController.m; path = Connection/BeaconStateViewController.m; sourceTree = "<group>"; };
+		C497E3221B141F4C005A3140 /* iBeaconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iBeaconViewController.h; path = Connection/iBeaconViewController.h; sourceTree = "<group>"; };
+		C497E3231B141F4C005A3140 /* iBeaconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iBeaconViewController.m; path = Connection/iBeaconViewController.m; sourceTree = "<group>"; };
+		C497E3241B141F4C005A3140 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Connection/MainViewController.h; sourceTree = "<group>"; };
+		C497E3251B141F4C005A3140 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Connection/MainViewController.m; sourceTree = "<group>"; };
+		C497E3261B141F4C005A3140 /* MotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionViewController.h; path = Connection/MotionViewController.h; sourceTree = "<group>"; };
+		C497E3271B141F4C005A3140 /* MotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MotionViewController.m; path = Connection/MotionViewController.m; sourceTree = "<group>"; };
+		C497E3281B141F4C005A3140 /* PositionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PositionViewController.h; path = Connection/PositionViewController.h; sourceTree = "<group>"; };
+		C497E3291B141F4C005A3140 /* PositionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PositionViewController.m; path = Connection/PositionViewController.m; sourceTree = "<group>"; };
+		C497E32A1B141F4C005A3140 /* URIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URIViewController.h; path = Connection/URIViewController.h; sourceTree = "<group>"; };
+		C497E32B1B141F4C005A3140 /* URIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URIViewController.m; path = Connection/URIViewController.m; sourceTree = "<group>"; };
+		C497E3351B141F78005A3140 /* JAALEEBeaconSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JAALEEBeaconSDK.h; path = ../SDK/JAALEEBeaconSDK.h; sourceTree = "<group>"; };
+		C497E3361B141F78005A3140 /* JLEBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeacon.h; path = ../SDK/JLEBeacon.h; sourceTree = "<group>"; };
+		C497E3371B141F78005A3140 /* JLEBeaconConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconConfigManager.h; path = ../SDK/JLEBeaconConfigManager.h; sourceTree = "<group>"; };
+		C497E3381B141F78005A3140 /* JLEBeaconDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconDefinitions.h; path = ../SDK/JLEBeaconDefinitions.h; sourceTree = "<group>"; };
+		C497E3391B141F78005A3140 /* JLEBeaconDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconDevice.h; path = ../SDK/JLEBeaconDevice.h; sourceTree = "<group>"; };
+		C497E33A1B141F78005A3140 /* JLEBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconManager.h; path = ../SDK/JLEBeaconManager.h; sourceTree = "<group>"; };
+		C497E33B1B141F78005A3140 /* JLEBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEBeaconRegion.h; path = ../SDK/JLEBeaconRegion.h; sourceTree = "<group>"; };
+		C497E33C1B141F78005A3140 /* JLEURIBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEURIBeacon.h; path = ../SDK/JLEURIBeacon.h; sourceTree = "<group>"; };
+		C497E33D1B141F78005A3140 /* JLEURIBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEURIBeaconManager.h; path = ../SDK/JLEURIBeaconManager.h; sourceTree = "<group>"; };
+		C497E33E1B141F78005A3140 /* libJaaleeBeaconSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libJaaleeBeaconSDK.a; path = ../SDK/libJaaleeBeaconSDK.a; sourceTree = "<group>"; };
+		C49E584F1B0EDD5A002B8718 /* position_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = position_a.png; path = Res/position_a.png; sourceTree = "<group>"; };
+		C49E58511B0EDD63002B8718 /* motion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = motion.png; path = Res/motion.png; sourceTree = "<group>"; };
+		C49E58521B0EDD63002B8718 /* position_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = position_b.png; path = Res/position_b.png; sourceTree = "<group>"; };
+		C49E58531B0EDD63002B8718 /* position_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = position_c.png; path = Res/position_c.png; sourceTree = "<group>"; };
+		C49E58541B0EDD63002B8718 /* position_d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = position_d.png; path = Res/position_d.png; sourceTree = "<group>"; };
+		C49E58551B0EDD63002B8718 /* position_e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = position_e.png; path = Res/position_e.png; sourceTree = "<group>"; };
+		C49E58561B0EDD63002B8718 /* position_f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = position_f.png; path = Res/position_f.png; sourceTree = "<group>"; };
+		C49E58731B0EFD3C002B8718 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C4D9B9C11908E467009983B6 /* far_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = far_image.png; path = Res/far_image.png; sourceTree = "<group>"; };
 		C4D9B9C21908E467009983B6 /* immediate_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = immediate_image.png; path = Res/immediate_image.png; sourceTree = "<group>"; };
 		C4D9B9C31908E467009983B6 /* near_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = near_image.png; path = Res/near_image.png; sourceTree = "<group>"; };
 		C4D9B9C41908E467009983B6 /* unknown_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unknown_image.png; path = Res/unknown_image.png; sourceTree = "<group>"; };
 		C4D9B9DB1909558C009983B6 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		C4D9B9DC1909558C009983B6 /* JLEWaitProgressShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLEWaitProgressShow.h; sourceTree = "<group>"; };
-		C4D9B9DD1909558C009983B6 /* JLEWaitProgressShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLEWaitProgressShow.m; sourceTree = "<group>"; };
+		C4D9B9DC1909558C009983B6 /* WaitProgressShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitProgressShow.h; sourceTree = "<group>"; };
+		C4D9B9DD1909558C009983B6 /* WaitProgressShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitProgressShow.m; sourceTree = "<group>"; };
 		C4E42C8F1907C88C00A8152C /* JLEReadBeaconParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLEReadBeaconParameters.h; path = Example/JLEReadBeaconParameters.h; sourceTree = "<group>"; };
 		C4E42C901907C88C00A8152C /* JLEReadBeaconParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JLEReadBeaconParameters.m; path = Example/JLEReadBeaconParameters.m; sourceTree = "<group>"; };
 		C4E42C931907C8E800A8152C /* JLEConfigBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLEConfigBeacon.h; sourceTree = "<group>"; };
@@ -97,9 +144,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C497E33F1B141F78005A3140 /* libJaaleeBeaconSDK.a in Frameworks */,
+				C49E58741B0EFD3C002B8718 /* AudioToolbox.framework in Frameworks */,
+				C40404B919060F8900B264BA /* libJaaleeBeaconSDK.a in Frameworks */,
 				C404048619060F6300B264BA /* CoreGraphics.framework in Frameworks */,
 				C404048819060F6300B264BA /* UIKit.framework in Frameworks */,
-				C4195DA719ECCDD80088451E /* libJaaleeBeaconSDK.a in Frameworks */,
 				C404048419060F6300B264BA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,9 +169,12 @@
 		C404047719060F6300B264BA = {
 			isa = PBXGroup;
 			children = (
-				C4A8E51D190A16C7008BD314 /* SDK */,
+				C497E3341B141F65005A3140 /* SDK */,
+				C49E585D1B0EE043002B8718 /* Beacon Connection */,
+				C47E6CC71B0AF86B004B0B09 /* URIBeacon */,
 				C4D9B9C01908E45B009983B6 /* Res */,
 				C4E42C921907C89800A8152C /* Function */,
+				C4E983971906220B0029EDB2 /* Inc */,
 				C404048919060F6300B264BA /* Example */,
 				C40404A819060F6300B264BA /* ExampleTests */,
 				C404048219060F6300B264BA /* Frameworks */,
@@ -142,6 +194,7 @@
 		C404048219060F6300B264BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C49E58731B0EFD3C002B8718 /* AudioToolbox.framework */,
 				C40404B819060F8900B264BA /* libJaaleeBeaconSDK.a */,
 				C404048319060F6300B264BA /* Foundation.framework */,
 				C404048519060F6300B264BA /* CoreGraphics.framework */,
@@ -194,23 +247,63 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C4A8E51D190A16C7008BD314 /* SDK */ = {
+		C47E6CC71B0AF86B004B0B09 /* URIBeacon */ = {
 			isa = PBXGroup;
 			children = (
-				C4195DA019ECCDD80088451E /* JLEBeacon.h */,
-				C4195DA119ECCDD80088451E /* JLEBeaconConfigManager.h */,
-				C4195DA219ECCDD80088451E /* JLEBeaconDefinitions.h */,
-				C4195DA319ECCDD80088451E /* JLEBeaconDevice.h */,
-				C4195DA419ECCDD80088451E /* JLEBeaconManager.h */,
-				C4195DA519ECCDD80088451E /* JLEBeaconRegion.h */,
-				C4195DA619ECCDD80088451E /* libJaaleeBeaconSDK.a */,
+			);
+			name = URIBeacon;
+			sourceTree = "<group>";
+		};
+		C497E3341B141F65005A3140 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				C497E3351B141F78005A3140 /* JAALEEBeaconSDK.h */,
+				C497E3361B141F78005A3140 /* JLEBeacon.h */,
+				C497E3371B141F78005A3140 /* JLEBeaconConfigManager.h */,
+				C497E3381B141F78005A3140 /* JLEBeaconDefinitions.h */,
+				C497E3391B141F78005A3140 /* JLEBeaconDevice.h */,
+				C497E33A1B141F78005A3140 /* JLEBeaconManager.h */,
+				C497E33B1B141F78005A3140 /* JLEBeaconRegion.h */,
+				C497E33C1B141F78005A3140 /* JLEURIBeacon.h */,
+				C497E33D1B141F78005A3140 /* JLEURIBeaconManager.h */,
+				C497E33E1B141F78005A3140 /* libJaaleeBeaconSDK.a */,
 			);
 			name = SDK;
+			sourceTree = "<group>";
+		};
+		C49E585D1B0EE043002B8718 /* Beacon Connection */ = {
+			isa = PBXGroup;
+			children = (
+				C497E31C1B141F4C005A3140 /* AccViewController.h */,
+				C497E31D1B141F4C005A3140 /* AccViewController.m */,
+				C497E31E1B141F4C005A3140 /* BaseViewController.h */,
+				C497E31F1B141F4C005A3140 /* BaseViewController.m */,
+				C497E3201B141F4C005A3140 /* BeaconStateViewController.h */,
+				C497E3211B141F4C005A3140 /* BeaconStateViewController.m */,
+				C497E3221B141F4C005A3140 /* iBeaconViewController.h */,
+				C497E3231B141F4C005A3140 /* iBeaconViewController.m */,
+				C497E3241B141F4C005A3140 /* MainViewController.h */,
+				C497E3251B141F4C005A3140 /* MainViewController.m */,
+				C497E3261B141F4C005A3140 /* MotionViewController.h */,
+				C497E3271B141F4C005A3140 /* MotionViewController.m */,
+				C497E3281B141F4C005A3140 /* PositionViewController.h */,
+				C497E3291B141F4C005A3140 /* PositionViewController.m */,
+				C497E32A1B141F4C005A3140 /* URIViewController.h */,
+				C497E32B1B141F4C005A3140 /* URIViewController.m */,
+			);
+			name = "Beacon Connection";
 			sourceTree = "<group>";
 		};
 		C4D9B9C01908E45B009983B6 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				C49E58511B0EDD63002B8718 /* motion.png */,
+				C49E58521B0EDD63002B8718 /* position_b.png */,
+				C49E58531B0EDD63002B8718 /* position_c.png */,
+				C49E58541B0EDD63002B8718 /* position_d.png */,
+				C49E58551B0EDD63002B8718 /* position_e.png */,
+				C49E58561B0EDD63002B8718 /* position_f.png */,
+				C49E584F1B0EDD5A002B8718 /* position_a.png */,
 				C4D9B9C11908E467009983B6 /* far_image.png */,
 				C4D9B9C21908E467009983B6 /* immediate_image.png */,
 				C4D9B9C31908E467009983B6 /* near_image.png */,
@@ -223,8 +316,8 @@
 			isa = PBXGroup;
 			children = (
 				C4D9B9DB1909558C009983B6 /* SVProgressHUD.bundle */,
-				C4D9B9DC1909558C009983B6 /* JLEWaitProgressShow.h */,
-				C4D9B9DD1909558C009983B6 /* JLEWaitProgressShow.m */,
+				C4D9B9DC1909558C009983B6 /* WaitProgressShow.h */,
+				C4D9B9DD1909558C009983B6 /* WaitProgressShow.m */,
 				C4E42C8F1907C88C00A8152C /* JLEReadBeaconParameters.h */,
 				C4E42C901907C88C00A8152C /* JLEReadBeaconParameters.m */,
 				C4E42C931907C8E800A8152C /* JLEConfigBeacon.h */,
@@ -235,8 +328,17 @@
 				C4E42C9A1907C94000A8152C /* JLEProximityDemo.m */,
 				C4E42C9C1907C95B00A8152C /* JLENotificationDemo.h */,
 				C4E42C9D1907C95B00A8152C /* JLENotificationDemo.m */,
+				C47E6CC21B0AF16A004B0B09 /* JLEURIBeaconDemo.h */,
+				C47E6CC31B0AF16A004B0B09 /* JLEURIBeaconDemo.m */,
 			);
 			name = Function;
+			sourceTree = "<group>";
+		};
+		C4E983971906220B0029EDB2 /* Inc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Inc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,11 +390,6 @@
 				TargetAttributes = {
 					C404047F19060F6300B264BA = {
 						DevelopmentTeam = NHQ5TS42W5;
-						SystemCapabilities = {
-							com.apple.BackgroundModes = {
-								enabled = 1;
-							};
-						};
 					};
 					C40404A019060F6300B264BA = {
 						TestTargetID = C404047F19060F6300B264BA;
@@ -323,13 +420,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C49E58501B0EDD5A002B8718 /* position_a.png in Resources */,
 				C4D9B9C61908E467009983B6 /* immediate_image.png in Resources */,
+				C49E58581B0EDD63002B8718 /* position_b.png in Resources */,
 				C4D9B9C71908E467009983B6 /* near_image.png in Resources */,
+				C49E585B1B0EDD63002B8718 /* position_e.png in Resources */,
+				C49E58591B0EDD63002B8718 /* position_c.png in Resources */,
 				C404049C19060F6300B264BA /* Images.xcassets in Resources */,
 				C4D9B9DE1909558C009983B6 /* SVProgressHUD.bundle in Resources */,
 				C404048E19060F6300B264BA /* InfoPlist.strings in Resources */,
 				C404049719060F6300B264BA /* Main.storyboard in Resources */,
+				C49E58571B0EDD63002B8718 /* motion.png in Resources */,
+				C49E585A1B0EDD63002B8718 /* position_d.png in Resources */,
 				C4D9B9C81908E467009983B6 /* unknown_image.png in Resources */,
+				C49E585C1B0EDD63002B8718 /* position_f.png in Resources */,
 				C4D9B9C51908E467009983B6 /* far_image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,15 +453,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C497E3321B141F4C005A3140 /* PositionViewController.m in Sources */,
 				C4E42C9B1907C94000A8152C /* JLEProximityDemo.m in Sources */,
+				C497E32D1B141F4C005A3140 /* BaseViewController.m in Sources */,
+				C47E6CC41B0AF16A004B0B09 /* JLEURIBeaconDemo.m in Sources */,
 				C404049A19060F6300B264BA /* ViewController.m in Sources */,
 				C4E42C951907C8E800A8152C /* JLEConfigBeacon.m in Sources */,
 				C4E42C911907C88C00A8152C /* JLEReadBeaconParameters.m in Sources */,
+				C497E3311B141F4C005A3140 /* MotionViewController.m in Sources */,
 				C404049419060F6300B264BA /* AppDelegate.m in Sources */,
-				C4D9B9DF1909558C009983B6 /* JLEWaitProgressShow.m in Sources */,
+				C4D9B9DF1909558C009983B6 /* WaitProgressShow.m in Sources */,
 				C404049019060F6300B264BA /* main.m in Sources */,
+				C497E3331B141F4C005A3140 /* URIViewController.m in Sources */,
 				C4E42C981907C90200A8152C /* JLEDistancesDemo.m in Sources */,
+				C497E32F1B141F4C005A3140 /* iBeaconViewController.m in Sources */,
+				C497E32C1B141F4C005A3140 /* AccViewController.m in Sources */,
 				C4E42C9E1907C95B00A8152C /* JLENotificationDemo.m in Sources */,
+				C497E3301B141F4C005A3140 /* MainViewController.m in Sources */,
+				C497E32E1B141F4C005A3140 /* BeaconStateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,61 +596,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
 				INFOPLIST_FILE = "Example/Example-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/../SDK",
 					"$(PROJECT_DIR)/SDK",
-					"$(PROJECT_DIR)",
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-iOS-SDK-master/SDK",
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-iOS-SDK-master",
-					v2.0/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-iOS-SDK-master",
-					v2.0/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.1/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.1/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.2/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.2/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.2/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.3/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.3/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.3/SDK,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/JaaleeBeaconSDK $(BUILT_PRODUCTS_DIR)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -548,61 +616,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
 				INFOPLIST_FILE = "Example/Example-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/../SDK",
 					"$(PROJECT_DIR)/SDK",
-					"$(PROJECT_DIR)",
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-iOS-SDK-master/SDK",
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-iOS-SDK-master",
-					v2.0/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-iOS-SDK-master",
-					v2.0/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.1/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.1/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.2/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.2/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.2/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.3/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.3/SDK,
-					/Users/jaalee/Desktop/Beacon,
-					SDK,
-					"2.0/Jaalee-Beacon-iOS-SDK-master",
-					v2.3/SDK,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/JaaleeBeaconSDK $(BUILT_PRODUCTS_DIR)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

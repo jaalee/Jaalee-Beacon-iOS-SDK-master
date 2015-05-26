@@ -7,9 +7,7 @@
 //
 
 #import "JLENotificationDemo.h"
-
-#import "JLEBeaconManager.h"
-#import "JLEBeacon.h"
+#import "JAALEEBeaconSDK.h"
 
 static NSString * const kIdentifier = @"jaalee.Example";
 
@@ -39,7 +37,7 @@ static NSString * const kIdentifier = @"jaalee.Example";
     self.beaconManager = [[JLEBeaconManager alloc] init];
     self.beaconManager.delegate = self;
     
-    _beaconRegion = [[JLEBeaconRegion alloc] initWithProximityUUID:JAALEE_PROXIMITY_UUID major:1 minor:1 identifier:kIdentifier];
+    _beaconRegion = [[JLEBeaconRegion alloc] initWithProximityUUID:JAALEE_PROXIMITY_UUID identifier:kIdentifier];
     
     self.beaconRegion.notifyOnEntry = self.mEnterSwitch.isOn;
     self.beaconRegion.notifyOnExit = self.mExitSwitch.isOn;

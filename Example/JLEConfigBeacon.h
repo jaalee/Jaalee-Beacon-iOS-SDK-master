@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "JLEBeaconConfigManager.h"
+
+#import "JAALEEBeaconSDK.h"
 
 @interface JLEConfigBeacon : ViewController<UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate, JLEBeaconConfigManagerDelegate>
 

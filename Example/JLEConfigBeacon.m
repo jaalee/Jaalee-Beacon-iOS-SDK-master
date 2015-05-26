@@ -7,9 +7,9 @@
 //
 
 #import "JLEConfigBeacon.h"
-#import "JLEBeaconDevice.h"
 #import "JLEReadBeaconParameters.h"
-#import "JLEWaitProgressShow.h"
+#import "WaitProgressShow.h"
+#import "JAALEEBeaconSDK.h"
 
 @interface JLEConfigBeacon ()
 
@@ -46,6 +46,11 @@
     [_mBeaconDeviceList removeAllObjects];
     [self.mTableView reloadData];
     [_mBeaconConfigManager startJaaleeBeaconsDiscovery];
+    
+    
+    if (_mBeaconDevice) {
+        [_mBeaconDevice disconnectBeacon];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,16 +72,15 @@
 
 #pragma mark - JLEBeaconConfigManager delegate
 
-- (void)beaconConfigManager:(JLEBeaconConfigManager *)manager didDiscoverBeacon:(JLEBeaconDevice *)beacon RSSI:(NSNumber *)RSSI
+-(void)beaconConfigManager:(JLEBeaconConfigManager *)manager didDiscoverBeacon:(JLEBeaconDevice *)beacon RSSI:(NSNumber *)RSSI AdvData:(NSDictionary *)AdvData
 {
-    
-    for (int i = 0; i < _mBeaconDeviceList.count; i++) {
-        JLEBeaconDevice *temp = [_mBeaconDeviceList objectAtIndex:i];
-        if (temp == beacon) {
-            return;
-        }
+    if ([RSSI intValue] > 0 || [RSSI intValue] < -40) {
+        return;
     }
     
+    if ([_mBeaconDeviceList containsObject:beacon]) {
+        [_mBeaconDeviceList removeObject:beacon];
+    }
     [_mBeaconDeviceList addObject:beacon];
     [self.mTableView reloadData];
 }
@@ -110,20 +114,12 @@
     UILabel *name = (UILabel*)[cell viewWithTag:1];
     UILabel *BeaconID = (UILabel*)[cell viewWithTag:2];
     UILabel *rssi = (UILabel*)[cell viewWithTag:3];
-    UILabel *connectable = (UILabel*)[cell viewWithTag:4];
     
     JLEBeaconDevice *temp = [_mBeaconDeviceList objectAtIndex:indexPath.row];
     
     name.text = temp.name;
     BeaconID.text = [temp.peripheral.identifier UUIDString];
-    rssi.text = [NSString stringWithFormat:@"%d", temp.rssi];
-    if (temp.isConnectable) {
-        [connectable setText:@"true"];
-    }
-    else
-    {
-        [connectable setText:@"false"];
-    }
+    rssi.text = [NSString stringWithFormat:@"%ld", (long)temp.rssi];
     
     
     return cell;
@@ -134,19 +130,19 @@
 {
     [tableView  deselectRowAtIndexPath:indexPath animated:YES];
     _mBeaconDevice = [_mBeaconDeviceList objectAtIndex:indexPath.row];
-    
-    if (_mBeaconDevice.isConnectable) {
-        [self performSegueWithIdentifier:@"ConfigDetail" sender:nil];
+    if ([_mBeaconDevice isConnectable]) {
+        [self performSegueWithIdentifier:@"BeaconMain" sender:nil];
     }
     else
     {
-        [JLEWaitProgressShow showErrorWithStatus:@"Current device is in Non-Connectable mode"];
+        [WaitProgressShow showErrorWithStatus:@"Current device is in Non-Connectable mode"];
     }
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString: @"ConfigDetail"])
+    if ([segue.identifier isEqualToString: @"BeaconMain"])
     {
         JLEReadBeaconParameters *ReadParaController = (JLEReadBeaconParameters*) segue.destinationViewController;
         ReadParaController.mSelectBeaconDevice = _mBeaconDevice;

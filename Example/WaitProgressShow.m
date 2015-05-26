@@ -7,10 +7,10 @@
 //  https://github.com/samvermette/SVProgressHUD
 //
 
-#import "JLEWaitProgressShow.h"
+#import "WaitProgressShow.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface JLEWaitProgressShow ()
+@interface WaitProgressShow ()
 
 @property (nonatomic, readwrite) SVProgressHUDMaskType maskType;
 @property (nonatomic, strong, readonly) NSTimer *fadeOutTimer;
@@ -36,7 +36,7 @@
 @end
 
 
-@implementation JLEWaitProgressShow
+@implementation WaitProgressShow
 
 @synthesize overlayWindow, hudView, maskType, fadeOutTimer, stringLabel, imageView, spinnerView, visibleKeyboardHeight;
 
@@ -46,77 +46,77 @@
 }
 
 
-+ (JLEWaitProgressShow*)sharedView {
++ (WaitProgressShow*)sharedView {
     static dispatch_once_t once;
-    static JLEWaitProgressShow *sharedView;
-    dispatch_once(&once, ^ { sharedView = [[JLEWaitProgressShow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; });
+    static WaitProgressShow *sharedView;
+    dispatch_once(&once, ^ { sharedView = [[WaitProgressShow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; });
     return sharedView;
 }
 
 
 + (void)setStatus:(NSString *)string {
-	[[JLEWaitProgressShow sharedView] setStatus:string];
+	[[WaitProgressShow sharedView] setStatus:string];
 }
 
 #pragma mark - Show Methods
 
 + (void)show {
-    [[JLEWaitProgressShow sharedView] showWithStatus:nil maskType:SVProgressHUDMaskTypeNone networkIndicator:NO];
+    [[WaitProgressShow sharedView] showWithStatus:nil maskType:SVProgressHUDMaskTypeNone networkIndicator:NO];
 }
 
 + (void)showWithStatus:(NSString *)status {
     
     
-    [[JLEWaitProgressShow sharedView] showWithStatus:status maskType:SVProgressHUDMaskTypeGradient networkIndicator:NO];
+    [[WaitProgressShow sharedView] showWithStatus:status maskType:SVProgressHUDMaskTypeGradient networkIndicator:NO];
 }
 
 + (void)showWithMaskType:(SVProgressHUDMaskType)maskType {
-    [[JLEWaitProgressShow sharedView] showWithStatus:nil maskType:maskType networkIndicator:NO];
+    [[WaitProgressShow sharedView] showWithStatus:nil maskType:maskType networkIndicator:NO];
 }
 
 + (void)showWithStatus:(NSString*)status maskType:(SVProgressHUDMaskType)maskType {
-    [[JLEWaitProgressShow sharedView] showWithStatus:status maskType:maskType networkIndicator:NO];
+    [[WaitProgressShow sharedView] showWithStatus:status maskType:maskType networkIndicator:NO];
 }
 
 + (void)showSuccessWithStatus:(NSString *)string {
-    [JLEWaitProgressShow showSuccessWithStatus:string duration:1];
+    [WaitProgressShow showSuccessWithStatus:string duration:1];
 }
 
 + (void)showSuccessWithStatus:(NSString *)string duration:(NSTimeInterval)duration {
-    [JLEWaitProgressShow show];
-    [JLEWaitProgressShow dismissWithSuccess:string afterDelay:duration];
+    [WaitProgressShow show];
+    [WaitProgressShow dismissWithSuccess:string afterDelay:duration];
 }
 
 + (void)showErrorWithStatus:(NSString *)string {
-    [JLEWaitProgressShow showErrorWithStatus:string duration:1];
+    [WaitProgressShow showErrorWithStatus:string duration:1];
 }
 
 + (void)showErrorWithStatus:(NSString *)string duration:(NSTimeInterval)duration {
-    [JLEWaitProgressShow show];
-    [JLEWaitProgressShow dismissWithError:string afterDelay:duration];
+    [WaitProgressShow show];
+    [WaitProgressShow dismissWithError:string afterDelay:duration];
 }
 
 
 #pragma mark - Dismiss Methods
 
 + (void)dismiss {
-	[[JLEWaitProgressShow sharedView] dismiss];
+	[[WaitProgressShow sharedView] dismiss];
 }
 
 + (void)dismissWithSuccess:(NSString*)successString {
-	[[JLEWaitProgressShow sharedView] dismissWithStatus:successString error:NO];
+	[[WaitProgressShow sharedView] dismissWithStatus:successString error:NO];
 }
 
 + (void)dismissWithSuccess:(NSString *)successString afterDelay:(NSTimeInterval)seconds {
-    [[JLEWaitProgressShow sharedView] dismissWithStatus:successString error:NO afterDelay:seconds];
+    [[WaitProgressShow sharedView] dismissWithStatus:successString error:NO afterDelay:seconds];
 }
 
 + (void)dismissWithError:(NSString*)errorString {
-	[[JLEWaitProgressShow sharedView] dismissWithStatus:errorString error:YES];
+	[[WaitProgressShow sharedView] dismissWithStatus:errorString error:YES];
 }
 
 + (void)dismissWithError:(NSString *)errorString afterDelay:(NSTimeInterval)seconds {
-    [[JLEWaitProgressShow sharedView] dismissWithStatus:errorString error:YES afterDelay:seconds];
+    [[WaitProgressShow sharedView] dismissWithStatus:errorString error:YES afterDelay:seconds];
 }
 
 
@@ -249,7 +249,7 @@
 - (void)positionHUD:(NSNotification*)notification {
     
     CGFloat keyboardHeight;
-    double animationDuration;
+    double animationDuration = 0.0;
     
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     
@@ -314,7 +314,7 @@
     } 
     
     if(notification) {
-        [UIView animateWithDuration:animationDuration 
+        [UIView animateWithDuration:animationDuration
                               delay:0 
                             options:UIViewAnimationOptionAllowUserInteraction 
                          animations:^{
@@ -438,7 +438,7 @@
 #pragma mark - Utilities
 
 + (BOOL)isVisible {
-    return ([JLEWaitProgressShow sharedView].alpha == 1);
+    return ([WaitProgressShow sharedView].alpha == 1);
 }
 
 

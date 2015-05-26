@@ -7,8 +7,7 @@
 //
 
 #import "JLEDistancesDemo.h"
-#import "JLEBeaconManager.h"
-#import "JLEBeacon.h"
+#import "JAALEEBeaconSDK.h"
 
 static NSString * const kIdentifier = @"jaalee.Example";
 
@@ -37,7 +36,6 @@ static NSString * const kIdentifier = @"jaalee.Example";
     _beaconManager = [[JLEBeaconManager alloc] init];
     _beaconManager.delegate = self;
     
-//    _beaconRegion = [[JLEBeaconRegion alloc] initWithProximityUUID:JAALEE_PROXIMITY_UUID major:1 minor:1 identifier:kIdentifier];
     _beaconRegion = [[JLEBeaconRegion alloc] initWithProximityUUID:JAALEE_PROXIMITY_UUID identifier:kIdentifier];
     
     [_beaconManager startRangingBeaconsInRegion:_beaconRegion];

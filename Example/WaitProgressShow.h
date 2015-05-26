@@ -19,7 +19,7 @@ enum {
 
 typedef NSUInteger SVProgressHUDMaskType;
 
-@interface JLEWaitProgressShow : UIView
+@interface WaitProgressShow : UIView
 
 + (void)show;
 

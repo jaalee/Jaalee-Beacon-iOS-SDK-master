@@ -32,7 +32,7 @@
  * @return void
  */
 
-- (void)beaconConfigManager:(JLEBeaconConfigManager *)manager didDiscoverBeacon:(JLEBeaconDevice *)beacon RSSI:(NSNumber *)RSSI;
+- (void)beaconConfigManager:(JLEBeaconConfigManager *)manager didDiscoverBeacon:(JLEBeaconDevice *)beacon RSSI:(NSNumber *)RSSI AdvData:(NSDictionary*)AdvData;
 
 ///**
 // * Delegate method invoked when CoreBluetooth based

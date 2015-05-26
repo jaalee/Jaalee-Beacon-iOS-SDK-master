@@ -7,7 +7,7 @@
 //
 
 #import "JLEReadBeaconParameters.h"
-#import "JLEWaitProgressShow.h"
+#import "WaitProgressShow.h"
 
 @interface JLEReadBeaconParameters ()<JLEBeaconDeviceDelegate>
 
@@ -32,7 +32,7 @@
     if (self.mSelectBeaconDevice) {
         self.mSelectBeaconDevice.delegate = self;
         [self.mSelectBeaconDevice connectToBeaconWithPassword:@"666666"];
-        [JLEWaitProgressShow showWithStatus:@"Trying to connect the Beacon..."];
+        [WaitProgressShow showWithStatus:@"Trying to connect the Beacon..."];
     }
 }
 
@@ -55,20 +55,92 @@
 
 - (void)beaconConnectionDidSucceeded:(JLEBeaconDevice *)beacon
 {
-    [JLEWaitProgressShow showSuccessWithStatus:@"Connected successfully"];
+    [WaitProgressShow showSuccessWithStatus:@"Connected successfully"];
     
-    [self ConfigBeacon];
+//    [self ReadParaFromBeacon];
+    
+    //Function Test
+//    [beacon writeValuetoService:0xFFF0 Characteristic:0xFFF6 value:0x02 withCompletion:^(BOOL value, NSError* error){
+//        if (value) {
+//            NSLog(@"Success");
+//        }
+//        else
+//        {
+//            NSLog(@"Failed");
+//        }
+//    }];
+    
+    NSLog(@"%@", beacon.URIBeacon_URLString);
+    
+    
+//    [beacon writeURIBeaconURL:@"https://www.jaalee.com/" txPower:31 WithCompletion:^(BOOL value, NSError*error)
+//     {
+//         if (value) {
+//             NSLog(@"Success");
+//             [beacon writeBeaconState:BEACON_STATE_IBEACON_NORMAL | BEACON_STATE_URIBEACON_TRIGGER withCompletion:^(BOOL value, NSError*error)
+//              {
+//                  if (value) {
+//                      NSLog(@"Success");
+//                  }
+//                  else
+//                  {
+//                      NSLog(@"Failed");
+//                  }
+//              }];
+//         }
+//         else
+//         {
+//             NSLog(@"Failed");
+//         }
+//     }];
+    
+//    [beacon startNotifyAccelerationData];
+//    [beacon startDetectMotion];
+//    [beacon startDetectPosition];
+//    
+//    
+//    NSLog(@"Beacon is support detect motion: %d", beacon.isSupportDetectMotion);
+//    NSLog(@"Beacon is support detect position: %d", beacon.isSupportDetectPosition);
+//    NSLog(@"Beacon is support read acc data: %d", beacon.isSupportReadAccelerationValue);
+//    NSLog(@"Beacon is support uriBeacon: %d", beacon.isSupportURIBeacon);
+    
+    [beacon writeBeaconState:BEACON_STATE_IBEACON_NORMAL connectable:false withCompletion:^(BOOL value, NSError*error)
+    {
+        if (value) {
+            NSLog(@"Success");
+        }
+        else
+        {
+            NSLog(@"%@", error);
+        }
+    }];
+}
+
+
+-(void)beaconDidPositionChanged:(JLEBeaconDevice *)beacon position:(JAALEE_POSITION_DEFINE)position
+{
+    NSLog(@"On Position Changed:%d", position);
+}
+
+- (void)beaconDidReadAccelerationValue:(JLEBeaconDevice *)beacon x:(int)x y:(int)y z:(int)z
+{
+    NSLog(@"On Read Acceleration Value:x:%d y:%d z:%d",x, y, z);
+}
+
+ -(void)beaconDisMotionDetected:(JLEBeaconDevice *)beacon
+{
+    NSLog(@"On Motion Detected");
 }
 
 - (void)beaconConnectionDidFail:(JLEBeaconDevice *)beacon withError:(NSError *)error
 {
-    [JLEWaitProgressShow showErrorWithStatus:@"Connect the beacon Failed"];
+    [WaitProgressShow showErrorWithStatus:@"Connect the beacon Failed"];
     [self.navigationController popToRootViewControllerAnimated:true];
 }
 
 - (void)beaconDidDisconnect:(JLEBeaconDevice *)beacon withError:(NSError *)error
 {
-    [JLEWaitProgressShow showErrorWithStatus:@"Disconnect from the Beacon"];
+    [WaitProgressShow showErrorWithStatus:@"Disconnect from the Beacon"];
     [self.navigationController popToRootViewControllerAnimated:true];
 }
 
@@ -149,6 +221,23 @@
     }
 }
 
+- (void) ReadBeaconState
+{
+    if (self.mSelectBeaconDevice.isConnected) {
+        [self.mSelectBeaconDevice readBeaconStateWithCompletion:^(uint8_t value, NSError* error){
+            if (value == BEACON_STATE_IBEACON_NORMAL) {
+                NSLog(@"BEACON_STATE_IBEACON_NORMAL");
+            }
+            else
+            {
+                NSLog(@"BEACON_STATE_DISABLE");
+            }
+
+            
+        }];
+    }
+}
+
 #pragma mark - Write Beacon Parameter Method
 - (void) WriteProximityUUID
 {
@@ -157,6 +246,10 @@
             
             if (value) {
                 NSLog(@"Beacon Proximity UUID Config Success..");
+            }
+            else
+            {
+                NSLog(@"Beacon Fail1..");
             }
             
         }];
@@ -171,7 +264,10 @@
             if (value) {
                 NSLog(@"Beacon Major Value Config Success..");
             }
-            
+            else
+            {
+                NSLog(@"Beacon Fail2..");
+            }
         }];
     }
 }
@@ -183,6 +279,10 @@
             
             if (value) {
                 NSLog(@"Beacon Minor Value Config Success..");
+            }
+            else
+            {
+                NSLog(@"Beacon Fail3..");
             }
             
         }];
@@ -197,6 +297,10 @@
             if (value) {
                 NSLog(@"Beacon Measured Power Value Config Success..");
             }
+            else
+            {
+                NSLog(@"Beacon Fail4..");
+            }
             
         }];
     }
@@ -205,10 +309,14 @@
 - (void) WriteTxPowerValue
 {
     if (self.mSelectBeaconDevice.isConnected) {
-        [self.mSelectBeaconDevice writeBeaconTxPower:JLEBeaconPowerLevel1 withCompletion:^(BOOL value, NSError* error){
+        [self.mSelectBeaconDevice writeBeaconTxPower:JLEBeaconPowerLevel2 withCompletion:^(BOOL value, NSError* error){
             
             if (value) {
                 NSLog(@"Beacon Tx Power Config Success..");
+            }
+            else
+            {
+                NSLog(@"Beacon Fail5..");
             }
             
         }];
@@ -218,10 +326,14 @@
 - (void) WriteDeviceName
 {
     if (self.mSelectBeaconDevice.isConnected) {
-        [self.mSelectBeaconDevice writeBeaconDeviceName:@"6161616161" withCompletion:^(BOOL value, NSError* error){
+        [self.mSelectBeaconDevice writeBeaconDeviceName:@"jaalee" withCompletion:^(BOOL value, NSError* error){
             
             if (value) {
                 NSLog(@"Beacon Device Name Config Success..");
+            }
+            else
+            {
+                NSLog(@"Beacon Fail6..");
             }
             
         }];
@@ -231,7 +343,30 @@
 - (void) WriteBroadcastRate
 {
     if (self.mSelectBeaconDevice.isConnected) {
-        [self.mSelectBeaconDevice callJaaleeBeacon];
+        [self.mSelectBeaconDevice writeBeaconAdvInterval:100 withCompletion:^(BOOL value, NSError* error){
+            
+            if (value) {
+                NSLog(@"Beacon Broadcast Rate Config Success..");
+            }
+            else
+            {
+                NSLog(@"Beacon Fail7..");
+            }
+            
+        }];
+    }
+}
+
+- (void) WriteBeaconState
+{
+    if (self.mSelectBeaconDevice.isConnected) {
+        [self.mSelectBeaconDevice writeBeaconState:BEACON_STATE_IBEACON_NORMAL connectable:false withCompletion:^(BOOL value, NSError* error){
+            
+            if (value) {
+                NSLog(@"Beacon State Config Success..");
+            }
+            
+        }];
     }
 }
 
@@ -284,6 +419,13 @@
         [self ReadBroadcastRate];
         
     }];
+
+    [UIView animateWithDuration:0.0 delay:4.5 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+    } completion:^(BOOL finished) {
+        [self ReadBeaconState];
+        
+    }];
+    
 }
 
 - (void) ConfigBeacon
@@ -327,6 +469,14 @@
         [self WriteBroadcastRate];
         
     }];
+    
+    [UIView animateWithDuration:0.0 delay:4.5 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+    } completion:^(BOOL finished) {
+        [self WriteBeaconState];
+        
+    }];
+    
+    
 }
 
 @end

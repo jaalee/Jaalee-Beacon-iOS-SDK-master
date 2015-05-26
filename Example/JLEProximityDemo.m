@@ -7,7 +7,7 @@
 //
 
 #import "JLEProximityDemo.h"
-#import "JLEBeaconManager.h"
+#import "JAALEEBeaconSDK.h"
 
 static NSString * const kIdentifier = @"jaalee.Example";
 
@@ -37,7 +37,7 @@ static NSString * const kIdentifier = @"jaalee.Example";
     _beaconManager = [[JLEBeaconManager alloc] init];
     _beaconManager.delegate = self;
     
-    _beaconRegion = [[JLEBeaconRegion alloc] initWithProximityUUID:JAALEE_PROXIMITY_UUID major:1 minor:1 identifier:kIdentifier];
+    _beaconRegion = [[JLEBeaconRegion alloc] initWithProximityUUID:JAALEE_PROXIMITY_UUID identifier:kIdentifier];
     
     [_beaconManager startRangingBeaconsInRegion:_beaconRegion];
 }
@@ -52,6 +52,7 @@ static NSString * const kIdentifier = @"jaalee.Example";
 
 - (void)beaconManager:(JLEBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(JLEBeaconRegion *)region
 {
+    NSLog(@"Lenth:%lu", (unsigned long)beacons.count);
     if (beacons.count > 0)
     {
         JLEBeacon *temp = [beacons firstObject];

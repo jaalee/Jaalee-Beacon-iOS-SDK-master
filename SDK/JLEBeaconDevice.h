@@ -69,6 +69,44 @@
  */
 - (void)beaconDidUpdateRssi:(JLEBeaconDevice*)beacon Error:(NSError*)error;
 
+/**
+ * Delegate method that indicates success in beacon connection.
+ *
+ * @param beacon reference to beacon object
+ *
+ * @return void
+ */
+- (void)beaconStartConnecting:(JLEBeaconDevice*)beacon;
+
+/**
+ * Delegate method that beacon did update acceleration value with device.
+ *
+ * @param beacon reference to beacon object
+ * @param x X-axis value of the acceleration
+ * @param y Y-axis value of the acceleration
+ * @param z Z-axis value of the acceleration
+ *
+ * @return void
+ */
+- (void)beaconDidReadAccelerationValue:(JLEBeaconDevice*)beacon x:(float)x y:(float)y z:(float)z;
+
+/**
+ * Delegate method that Beacon’s position changes
+ *
+ * @param beacon reference to beacon object
+ *
+ * @return void
+ */
+- (void)beaconDidPositionChanged:(JLEBeaconDevice*)beacon position:(JAALEE_POSITION_DEFINE)position;
+
+/**
+ * Delegate method that Beacon moves.
+ *
+ * @param beacon reference to beacon object
+ *
+ * @return void
+ */
+- (void)beaconDisMotionDetected:(JLEBeaconDevice*)beacon;
 @end
 
 ////////////////////////////////////////////////////////////////////
@@ -87,16 +125,7 @@
 
 @property (nonatomic, weak)     id <JLEBeaconDeviceDelegate>  delegate;
 
-@property (nonatomic, strong)        CBCentralManager *manager;
 /// @name Publicly available properties
-/**
- *  name
- *
- *  Discussion:
- *    name of the beacon device.
- */
-@property (nonatomic, strong)   NSString*               name;
-
 /**
  *  rssi
  *
@@ -105,6 +134,14 @@
  *
  */
 @property (nonatomic)           NSInteger               rssi;
+
+/**
+ *  name
+ *
+ *  Discussion:
+ *    name of the beacon device.
+ */
+@property (nonatomic, strong)   NSString*               LocalName;
 
 /**
  *  isConnectable
@@ -141,6 +178,14 @@
  *    Wether the beacon is belong to Jaalee.
  */
 @property (nonatomic, readonly)   BOOL                  isJaaleeBeacon;
+
+/**
+ *  name
+ *
+ *  Discussion:
+ *    name of the beacon device.
+ */
+@property (nonatomic, readonly)   NSString*               name;
 
 /**
  *  batteryLevel
@@ -200,7 +245,7 @@
  *
  *    The beacon state. Value available after connection with the beacon
  */
-@property (nonatomic, readonly)   Jaalee_Beacon_State               beaconState;
+@property (nonatomic, readonly)   uint8_t               beaconState;
 
 /**
  *  txPower
@@ -223,9 +268,99 @@
  */
 @property (nonatomic, readonly)   Jaalee_Audio_State      audioState;
 
+
+/**
+ *  accBeaconAdvType
+ *
+ *  Broadcasting type of AccBeacon data
+ */
+@property (nonatomic, readonly)   Jaalee_Beacon_Acc_Data_Broadcast_Type      accBeaconAdvType;
+
+/**
+ *  accBeaconAdvDataService
+ *
+ *  Service of  broadcasting AccBeacon data
+ */
+@property (nonatomic, readonly)   uint16_t                                   accBeaconAdvDataService;
+
+/**
+ *  accBeaconAdvDataComposition
+ *
+ *    AccBeacon Data combination format
+ */
+@property (nonatomic, readonly)   uint8_t                                    accBeaconAdvDataComposition;
+
+/**
+ *  motionIntensityOfDetection
+ *
+ *  The intensity of motion detection, divided into 127 grades
+ */
+@property (nonatomic, readonly)   uint8_t                                    motionIntensityOfDetection;
+
+/**
+ *  isEnableTap
+ *
+ *  Whether to allow the switch to the quick-connect mode by tapping
+ */
+@property (nonatomic, readonly)   BOOL                                       isEnableTap;
+
+
+/**
+ *  URIBeacon_URL
+ *
+ *    URIBeacon's url
+ */
+@property (nonatomic, readonly, strong)   NSURL                              *URIBeacon_URLString;
+
+/**
+ *  isAccelerationDataNotifing
+ *
+ *  Is it reading the data of the acceleration sensor
+ */
+@property (nonatomic, readonly)   BOOL                                       isAccelerationDataNotifing;
+/**
+ *  isMotionDetecting
+ *
+ *  Motion detect state
+ */
+@property (nonatomic, readonly)   BOOL                                       isMotionDetecting;
+
+/**
+ *  isPositionDetecting
+ *
+ *  Is it detecting the position changes of beacon
+ */
+@property (nonatomic, readonly)   BOOL                                       isPositionDetecting;
+
+/**
+ *  isSupportReadAccelerationValue
+ *
+ *  Is support read accrleration value
+ */
+@property (nonatomic, readonly)   BOOL                                     isSupportReadAccelerationValue;
+
+/**
+ *  isSupportDetectMotion
+ *
+ *  Is support detect motion
+ */
+@property (nonatomic, readonly)   BOOL                                     isSupportDetectMotion;
+
+/**
+ *  isSupportDetectPosition
+ *
+ *  Is support detect position
+ */
+@property (nonatomic, readonly)   BOOL                                     isSupportDetectPosition;
+
+/**
+ *  isSupportURIBeacon
+ *
+ *  Is support uriBeacon
+ */
+@property (nonatomic, readonly)   BOOL                                     isSupportURIBeacon;
+
 /// @name Connection handling methods
-
-
 /**
  * Connect to particular beacon using bluetooth.
  * Connection is required to change values like
@@ -359,7 +494,6 @@
 
 
 
-
 /// @name Methods for writing beacon configuration
 
 /**
@@ -444,7 +578,7 @@
  *
  * @return void
  */
-- (void) writeBeaconState:(Jaalee_Beacon_State)state withCompletion:(JLEBoolCompletionBlock)completion;
+- (void) writeBeaconState:(uint8_t)state connectable:(BOOL)connectable withCompletion:(JLEBoolCompletionBlock)completion;
 
 /**
  * Writes device audio state of bluetooth connected beacon.
@@ -481,24 +615,153 @@
 
 
 /**
- * Call the Beacon of bluetooth connected beacon.
+ * Write value to service and characteristic whth value and completion.
+ *
+ * @param Service The service of the beacon.
+ * @param Characteristic  The characteristic under the service.
+ * @param Value The value.
+ * @param completion block handling operation completion.
  *
  * @return void
+ */
+-(void) writeValuetoService:(UInt16)Service Characteristic:(UInt16) Characteristic value:(uint8_t)value withCompletion:(JLEBoolCompletionBlock)completion;
+
+
+/**
+ * Call the Beacon of bluetooth connected beacon.
+ *
+ * @return Wether the method is call success
  */
 - (BOOL) callJaaleeBeacon;
 
 /**
  * Enable jaalee beacon ring when disconnect.
  *
- * @return void
+ * @return Wether the method is call success
  */
 - (BOOL) enableJaaleeBeaconRingWhenDisconnect;
 
 /**
  * Disable jaalee beacon ring when disconnect.
  *
- * @return void
+ * @return Wether the method is call success
  */
 - (BOOL) disableJaaleeBeaconRingWhenDisconnect;
+
+/**
+ *  Change uribeacon's parameter.
+ *
+ * @param url url like this “http://www.jaalee.com/”
+ * @param txPower this value just for measured the distance, it would not change the transmition distance of the beacon
+ * @param completion block handling operation completion
+ *
+ * @return void
+ */
+- (void) writeURIBeaconURL:(NSString*)url txPower:(int)txPower WithCompletion:(JLEBoolCompletionBlock)completion;
+
+/**
+ * Start get the value of acceleration
+ *
+ * @return Wether the method is call success
+ */
+- (BOOL) startNotifyAccelerationData;
+
+/**
+ * Stop get the value of acceleration
+ *
+ * @return Wether the method is call success
+ */
+- (BOOL) stopNotifyAccelerationData;
+
+/**
+ * Start to detect motion
+ *
+ * @return Wether the method is call success
+ */
+- (BOOL) startDetectMotion;
+
+/**
+ * Stop to detect motion
+ *
+ * @return Wether the method is call success
+ */
+- (BOOL) stopDetectMotion;
+
+/**
+ * Start to detect position
+ *
+ * @return Wether the method is call success
+ */
+- (BOOL) startDetectPosition;
+
+/**
+ * Stop to detect position
+ *
+ * @return Wether the method is call success
+ */
+- (BOOL) stopDetectPosition;
+
+/**
+ * Set the intensity of motion detection Range:1-127 (Previous connection
+ * required)
+ *
+ * @param level Range: 1-127
+ * @param completion block handling operation completion
+ *
+ * @return void
+ */
+- (void) setIntensityOfMotionDetection:(uint8_t)level WithCompletion:(JLEBoolCompletionBlock)completion;
+
+
+/**
+ * Set acc beacon data (Previous connection
+ * required)
+ *
+ * @param value the value want to add(BEACON_ACC_DATA_ADD_MAC_ADRESS | BEACON_ACC_DATA_ADD_ACC_DATA)
+ * @param type Broadcast type @seeJaalee_Beacon_Acc_Data_Broadcast_Type
+ * @param Rate Acc value update rate
+ * @param completion block handling operation completion
+ *
+ * @return void
+ */
+- (void) writeAccBeaconAdvDataComposition:(uint8_t)value type:(Jaalee_Beacon_Acc_Data_Broadcast_Type)type AccDataUpdateRate:(uint8_t)Rate WithCompletion:(JLEBoolCompletionBlock)completion;
+
+/**
+ * Set the service of acc beacon (Previous connection
+ * required)
+ *
+ * @param service
+ * @param completion block handling operation completion
+ *
+ * @return void
+ */
+- (void) writeAccBeaconAdvDataService:(uint16_t)service WithCompletion:(JLEBoolCompletionBlock)completion;
+
+/**
+ * Read temperature and battery (Previous connection
+ * required)
+ *
+ * @param completion block with device state as param
+ *
+ * @return void
+ */
+- (void) readBatteryAndTemperatureWithCompletion:(JLEReadBatteryWithTemperatureBlock)completion;
+
+/**
+ * Enable beacon change to fase connect mode by tap
+ *
+ * @return Wether the method is call success
+ */
+- (BOOL) enableBeaconChangeToFastConnectModeByTap;
+
+/**
+ * Disnable beacon change to fase connect mode by tap
+ *
+ * Warning: This means if the beacon staying non-connectable mode, the only way to change the
+ * state is by re battery
+ *
+ * @return
+ */
+- (BOOL) disableBeaconChangeToFastConnectModeByTap;
 
 @end

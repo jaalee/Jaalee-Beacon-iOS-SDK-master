@@ -32,3 +32,22 @@ Features:
 ## 2.4 (October 14, 2014)
 Features:
   - Bug Fixes.
+
+## 2.4.1 (December 3, 2014)
+Features:
+  - Add Function.
+
+## 2.4.2 (December 11, 2014)
+Features:
+  - Add Function to get local name.
+
+## 2.4.3 (March 4, 2015)
+Features:
+  - Fix example bug of Notification.
+
+## 2.5 (May 26, 2015)
+Features:
+  - Support URIBeacon.
+  - Support JAALEE iB003-N
+  - Support Motion Detect
+  - Bugs fixes
